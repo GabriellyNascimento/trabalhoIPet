@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cadastro de Clientes IPet</title>
+  <meta charset="utf-8">
+  <link rel="icon" href="" type="" sizes="16x16">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+<link rel="stylesheet" href="css/animate.css">
+<!-- Estilo do recurso -->
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/ionicons.min.css">
+<!-- Estilo do recurso -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="style.css" >
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script type="text/javascript" src="js/jquery-2.1.1.js"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/plugins.js"></script> 
+<script type="text/javascript" src="js/menu.js"></script> 
+<script type="text/javascript" src="js/custom.js"></script> 
+<script src="jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<style >
+  	legend{
+  		padding-bottom: 15px; 
+  		padding-top: 30px;
+  		border-bottom: 1px dotted  #D3D3D3;
+  		font-weight: bold;
+  		font-size: 14px;
+      color: black;
+  	}
+    .form-control{
+      color: black;
+     font-weight: bold;
+    background-color:white;
+    font-family: 'Roboto';
+    }
+    label{
+      font-family: 'Roboto';
+      color: black;
+      font-weight: bold;
+    }
+    
+body{
+  background: url(images/header-bg.jpg);
+}
+a:hover{
+  text-decoration: none;
+  background: rgba(0, 174, 218,0.7);
+
+}
+
+  </style>
+<script>
+    function hide(i){
+      if (i == "user1"){
+        jQuery("#user1").hide(1000);
+      }
+      if (i== "user2"){
+        jQuery("#user2").hide(1000);
+      }
+      if (i == "user3"){
+        jQuery("#user3").hide(1000);
+      }
+    };
+
+    function alterar(i){
+    
+      if (i == "user1"){
+        if (document.getElementById("alt1").value == "Alterar"){
+          jQuery(".user1").prop("readOnly", false);
+          jQuery(".user1").css("border", "solid #000000 1px");
+          jQuery(".cliFun1").prop("disabled", false);
+          document.getElementById("alt1").value = "Salvar";
+        } else {
+          jQuery(".user1").prop("readOnly", true);
+          jQuery(".user1").css("border", "0");
+          jQuery(".cliFun1").prop("disabled", true);
+          document.getElementById("alt1").value = "Alterar";
+        }
+      }
+      if (i== "user2"){
+        if (document.getElementById("alt2").value == "Alterar"){
+          jQuery(".user2").prop("readOnly", false);
+          jQuery(".user2").css("border", "solid #000000 1px");
+          jQuery(".cliFun2").prop("disabled", false);
+          document.getElementById("alt2").value = "Salvar";
+        } else {
+          jQuery(".user2").prop("readOnly", true);
+          jQuery(".user2").css("border", "0");
+          jQuery(".cliFun2").prop("disabled", true);
+          document.getElementById("alt2").value = "Alterar";
+        }
+      }
+         if (i == "user3"){
+        if (document.getElementById("alt3").value == "Alterar"){
+          jQuery(".user3").prop("readOnly", false);
+          jQuery(".user3").css("border", "solid #000000 1px");
+          jQuery("#cliFun3").prop("disabled", false);
+          document.getElementById("alt3").value = "Salvar";
+        } else {
+          jQuery(".user3").prop("readOnly", true);
+          jQuery(".user3").css("border", "0");
+          jQuery("#cliFun3").prop("disabled", true);
+          document.getElementById("alt3").value = "Alterar";
+        }
+      }
+    };
+  </script>
+
+
+</head>
+<body>
+  <div class="wrapper">
+
+    <div class="container-fluid">
+    <nav class="navbar navbar-inverse" style="margin-left: -15px; width:1366px;">
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html" ><img src="images/logo.png" width="80" height="30" alt="Logo" /></a>
+      
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tabela.html">Gerenciar cadastros</a></li>
+       <li><a href="ordem de servico.html">Ordem de serviço</a></li>
+           <li><a href="cadC.html">Novo cliente</a></li>
+       <li><a href="cadF.html">Novo funcionario</a></li>
+        <li><a href="pedido.html"> Solicitar pedido</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="tabela.html"><span class="fa fa-user "></span>ADM</a></li>
+    </ul>
+  </div>
+</nav>
+    <!-- /.navbar-collapse --> 
+  </div>
+
+<div class="dados">
+    <h1 class="fontVerdana">Ordem de serviços</h1>
+    <form>
+      <div id="dad">
+            </div>
+            <table id="tab" style="background-color: black;">
+      <caption class="fontVerdana"></caption>
+      
+       <tr style="color: white;font-weight: bold;">
+          <th class="menu fontVerdana">Cliente</th>
+          <th class="menu fontVerdana">Telefone</th>
+          <th class="menu fontVerdana">CPF</th>
+          <th class="menu fontVerdana">Data</th>
+          <th class="menu fontVerdana">Horário</th>
+          <th class="menu fontVerdana">Porte</th>
+          <th class="menu fontVerdana">Espécie</th>
+          <th class="menu fontVerdana">Serviços</th>
+          <th class="menu fontVerdana">Ações</th>
+      
+      </tr>
+
+      <tr id="user1">
+            <td><input type="text" class="user1" readonly="" value="Maria da Silva" style="border: 0px; font-size:20px; "></td>
+            <td><input type="text" class="user1" readonly="" value="988123456" style="border: 0px; font-size:20px; "></td>
+            <td><input type="text" class="user1" readonly="" size="11" maxlength="11" value="12365407798" style="border: 0px; font-size:20px; "></td>
+            <td><input type="date" class="user1" readonly="" value="2020-06-01" style="border: 0px; font-size:20px; "></td>
+            <td><input type="text" class="user1" size="6" maxlength="6" readonly="" value="10:00" style="border: 0px; font-size:20px; "></td>
+            <td><select type="text" id="" class="user1 cliFun1" disabled="" style="border: 0px; font-size:20px; ">
+                  <option value="Grande">Grande</option>
+                  <option value="Medio">Médio</option>
+                  <option value="Pequeno">Pequeno</option>
+              </select>
+            </td>
+            <td><select type="text" id="" class="user1 cliFun1" disabled="" style="border: 0px; font-size:20px; ">
+                  <option value="Cao">Cão</option>
+                  <option value="Gato">Gato</option>
+              </select>
+            </td>
+            <td><select type="text" id="" class="user1 cliFun1" disabled="" style="border: 0px; font-size:20px; ">
+                  <option value="Banho">Banho</option>
+                  <option value="Tosa">Tosa</option>
+                  <option value="Vacinacao">Vacinação</option>
+              </select>
+            </td>
+            <td><input type="button" onclick="alterar('user1')" id="alt1" class="btn-warning mod" style="border: 0px; font-size:16px; " value="Alterar"> <input onclick="hide('user1')" type="button" class="btn-danger mod2" style="border: 0px; font-size:16px; " value="Excluir"></td>
+          </tr>
+
+          <tr id="user2">
+            <td><input type="text" class="user2" readonly="" value="Jorge Amado" style="border: 0px; font-size:20px; "></td>
+            <td><input type="text" class="user2" readonly="" value="999157862" style="border: 0px; font-size:20px; "></td>
+            <td><input type="text" class="user2" size="11" maxlength="11" readonly="" value="12345678911" style="border: 0px; font-size:20px; "></td>
+            <td><input type="date" class="user2" readonly="" value="2020-06-01" style="border: 0px; font-size:20px; "></td>
+            <td><input type="text" class="user2" size="6" maxlength="6" readonly="" value="12:00" style="border: 0px; font-size:20px; "></td>
+            <td><select type="text" id="" class="user2 cliFun2" disabled="" style="border: 0px; font-size:20px; ">
+                  <option value="Grande">Grande</option>
+                  <option value="Medio">Médio</option>
+                  <option value="Pequeno">Pequeno</option>
+              </select>
+            </td>
+            <td><select type="text" id="" class="user2 cliFun2" disabled="" style="border: 0px; font-size:20px; ">
+                  <option value="Cao">Cão</option>
+                  <option value="Gato">Gato</option>
+              </select>
+            </td>
+            <td><select type="text" id="" class="user2 cliFun2" disabled="" style="border: 0px; font-size:20px; ">
+                  <option value="Banho">Banho</option>
+                  <option value="Tosa">Tosa</option>
+                  <option value="Vacinacao">Vacinação</option>
+              </select>
+            </td>
+            <td><input type="button" onclick="alterar('user2')" class="btn-warning mod" id="alt2"  style="border: 0px; font-size:16px; " value="Alterar"> <input onclick="hide('user2')" type="button" class="btn-danger mod2" style="border: 0px; font-size:16px; " value="Excluir"></td>
+          </tr>
+
+
+          <tr id="user3">
+            <td><input type="text" class="user3" value="Alice Maria" style="border: 1px solid rgb(0, 0, 0); font-size: 20px;"></td>
+            <td><input type="text" class="user3" value="38434321" style="border: 1px solid rgb(0, 0, 0); font-size: 20px;"></td>
+            <td><input type="text" class="user3" size="11" maxlength="11" value="98765412302" style="border: 1px solid rgb(0, 0, 0); font-size: 20px;"></td>
+            <td><input type="date" class="user3" value="2020-06-01" style="border: 1px solid rgb(0, 0, 0); font-size: 20px;"></td>
+            <td><input type="text" class="user3" size="6" maxlength="6" value="13:00" style="border: 1px solid rgb(0, 0, 0); font-size: 20px;"></td>
+            <td><select type="text" id="" class="user3 cliFun3" disabled="" style="border: 0px; font-size:20px; ">
+                  <option value="Grande">Grande</option>
+                  <option value="Medio">Médio</option>
+                  <option value="Pequeno">Pequeno</option>
+              </select>
+            </td>
+            <td><select type="text" id="" class="user3 cliFun3" style="border: 1px solid rgb(0, 0, 0); font-size: 20px;">
+                  <option value="Cao">Cão</option>
+                  <option value="Gato">Gato</option>
+              </select>
+            </td>
+            <td><select type="text" id="" class="user3 cliFun3" style="border: 1px solid rgb(0, 0, 0); font-size: 20px;">
+                  <option value="Banho">Banho</option>
+                  <option value="Tosa">Tosa</option>
+                  <option value="Vacinacao">Vacinação</option>
+              </select>
+            </td>
+            <td><input type="button" onclick="alterar('user3')" class="btn-warning mod" id="alt3" style="border: 0px; font-size:16px; " value="Alterar"/> <input onclick="hide('user3')" type="button" class="btn-danger mod2" style="border: 0px; font-size:16px; " value="Excluir"/></td>
+          </tr>
+
+      
+    </table>
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-2.1.1.js"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/plugins.js"></script> 
+<script type="text/javascript" src="js/menu.js"></script> 
+<script type="text/javascript" src="js/custom.js"></script>
+
+</body>
+
+</html>

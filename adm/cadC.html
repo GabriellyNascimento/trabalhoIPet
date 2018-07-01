@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cadastro de Clientes IPet</title>
+  <meta charset="utf-8">
+  <link rel="icon" href="" type="" sizes="16x16">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+<link rel="stylesheet" href="css/animate.css">
+<!-- Estilo do recurso -->
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/ionicons.min.css">
+<!-- Estilo do recurso -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <style >
+    legend{
+      padding-bottom: 15px; 
+      padding-top: 30px;
+      border-bottom: 1px dotted  #D3D3D3;
+      font-weight: bold;
+      font-size: 14px;
+      color: black;
+    }
+    .form-control{
+      color: black;
+     font-weight: bold;
+    background-color:white;
+    font-family: 'Roboto';
+    }
+    label{
+      font-family: 'Roboto';
+      color: black;
+      font-weight: bold;
+    }
+    
+body{
+  background: url(images/header-bg.jpg);
+}
+a:hover{
+  text-decoration: none;
+  background: rgba(0, 174, 218,0.7);
+
+}
+
+  </style>
+<script >
+  function validarSenha(){
+   NovaSenha = document.getElementById('NovaSenha').value;
+   CNovaSenha = document.getElementById('CNovaSenha').value;
+   if (NovaSenha != CNovaSenha) {
+      alert("SENHAS DIFERENTES!\nFAVOR DIGITAR SENHAS IGUAIS"); 
+   }else{
+      document.FormSenha.submit();
+   }
+};
+
+jQuery("#formula").submit(function(){
+      alert("Cadastro realizado com sucesso");
+    });
+</script>
+
+</head>
+<body>
+  <div class="wrapper">
+
+  <div class="container-fluid">
+    <nav class="navbar navbar-inverse" style="margin-left: -15px; width:1366px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html" ><img src="images/logo.png" width="80" height="30" alt="Logo" /></a>
+      
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tabela.html">Gerenciar cadastros</a></li>
+       <li><a href="ordem de servico.html">Ordem de serviço</a></li>
+           <li><a href="cadC.html">Novo cliente</a></li>
+       <li><a href="cadF.html">Novo funcionario</a></li>
+        <li><a href="pedido.html"> Solicitar pedido</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="tabela.html"><span class="fa fa-user "></span>ADM</a></li>
+    </ul>
+  </div>
+</nav>
+    <!-- /.navbar-collapse --> 
+  </div>
+
+  <div class="container">
+    <br>
+    <h1 class="tit">CADASTRO DO CLIENTE</h1>
+    <br><br><br>
+  <form id="formula">   
+    <fieldset>
+    <legend>DADOS PESSOAIS</legend>
+     <br>         
+  <div class="row">
+    
+    <div class="col-xs-6">
+      <label for="usr">*Nome:</label>
+      <input type="text" class="form-control" id="usr" required onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122 || event.charCode == 231'>
+      </div>
+
+      <div class="col-xs-6">
+      <label for="usr">*Sobrenome:</label>
+      <input type="text" class="form-control" id="usr" required onkeypress='return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122 || event.charCode == 231'>
+      </div>
+
+    </div>
+    <br>
+
+    <div class="row">
+    <div class="col-xs-3">
+  <label for="usr">Telefone</label>
+    <input type="tel" class="form-control" id="usr" maxlength="11" required>  
+    </div>
+
+    <div class="col-xs-1"></div>
+
+  <div class="col-xs-3">
+  <label for="usr">Data de Nascimento:</label>
+    <input type="date" class="form-control" id="usr"  required >
+    </div>
+
+    <div class="col-xs-1"></div>
+
+    <div class="col-xs-2">
+  <label for="usr">*CPF</label>
+    <input type="number" class="form-control" id="usr" maxlength="11" required >  
+
+    </div>
+
+    <div class="col-xs-2">
+  <label for="usr">*RG</label>
+    <input type="text" class="form-control" id="usr"  maxlength="10" required > 
+    </div>
+
+    </div>
+    </fieldset>
+    <br><br>
+    <fieldset>
+      <legend>DADOS DE ENDEREÇO</legend>
+      <br> 
+      <div class="row">
+      <div class="col-xs-4">
+    <label for="usr">Rua</label>
+      <input type="text" class="form-control" id="usr"> 
+      </div>
+
+
+      <div class="col-xs-2">
+    <label for="usr">Número</label>
+      <input type="text" class="form-control" id="usr"> 
+      </div>
+
+      <div class="col-xs-4">
+    <label for="usr">Bairro</label>
+      <input type="text" class="form-control" id="usr"> 
+      </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-4">
+      <label for="usr">Cidade</label>
+        <input type="text" class="form-control" id="usr"> 
+        </div>        
+
+        <div class="col-xs-2">
+      <label for="usr">CEP</label>
+        <input type="text" class="form-control" id="usr"  maxlength="8" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>  
+        </div>
+      </div>
+    </fieldset>
+    <br><br>
+    <fieldset>
+      <legend>DADOS DE LOGIN</legend>
+      <br> 
+      <div class="row">
+        <div class="col-xs-4">
+          <label for="exampleFormControlFile1">Foto de Perfil:</label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1" style="color: black;font-family: 'Roboto';">
+        </div>
+        <div class="col-xs-4">
+        <label for="usr">*Login de Usuário:</label>
+        <input type="text" class="form-control" id="usr" required>
+        </div>
+
+        <div class="col-xs-4">
+        <label for="usr">*E-mail:</label>
+        <input type="email" class="form-control" id="usr" required>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-4">
+        <label for="pwd">*Senha:</label>
+        <input type="password" class="form-control" id="NovaSenha" required>
+        </div>
+
+        <div class="col-xs-4">
+        <label for="pwd">*Confirme a senha:</label>
+        <input type="password" class="form-control" id="CNovaSenha" required>
+        </div>
+      </div>
+    </fieldset>
+    <br><br>
+<div class="main app form" id="main">
+    <button type="submit" class="btn btn-action wow fadeInUp">Cadastrar</button> 
+    <a href="index.html" class="btn btn-action wow fadeInUp">Cancelar</a>
+  </div>
+  </form>
+
+ </div>
+</div>
+ </div>
+ </div>  
+<script type="text/javascript" src="js/jquery-2.1.1.js"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/plugins.js"></script> 
+<script type="text/javascript" src="js/menu.js"></script> 
+<script type="text/javascript" src="js/custom.js"></script> 
+
+
+</body>
+</html>
